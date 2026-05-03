@@ -1,15 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Website Deployment</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="bg-animation"></div>
+
     <div class="container">
-        <h1>Welcome to My DevOps Project</h1>
-        <p>This website is deployed automatically using Docker, Jenkins, GitHub and AWS.</p>
-        <button onclick="showMessage()">Click Me</button>
-        <h2 id="message"></h2>
+        <div class="card">
+            <div class="top-bar">
+                <span class="badge">🚀 DevOps</span>
+                <span class="badge">⚙ Jenkins</span>
+                <span class="badge">☁ AWS</span>
+            </div>
+
+            <h1>Welcome to my Smart Website Deployment</h1>
+            <p class="typing-text"></p>
+
+            <div class="live-info">
+                <span id="clock"></span>
+                <span class="status">● Live Deployment Active</span>
+            </div>
+
+            <button onclick="launchProject()">Launch Project</button>
+            <h2 id="message"></h2>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <h3 id="deployCount">0</h3>
+                    <p>Deployments</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="buildCount">0</h3>
+                    <p>Successful Builds</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="uptimeCount">0</h3>
+                    <p>Cloud Uptime %</p>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-box">
+                    <h3>⚡ CI/CD Pipeline</h3>
+                    <p>Automated build and deployment using Jenkins pipeline.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🔄 Auto Integration</h3>
+                    <p>Continuous code integration with GitHub automation.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>☁ Cloud Hosted</h3>
+                    <p>Live deployment on AWS EC2 with scalability.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
