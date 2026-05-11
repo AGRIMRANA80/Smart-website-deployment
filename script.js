@@ -1,45 +1,65 @@
-const text = "Automated cloud deployment using Jenkins, GitHub & AWS.";
+const text =
+    "Automating website deployment using GitHub, Jenkins, AWS EC2 and Nginx.";
+
 let index = 0;
 
 function typeText() {
+    const element = document.querySelector(".typing-text");
     if (index < text.length) {
-        document.querySelector(".typing-text").textContent += text.charAt(index);
+        element.textContent += text.charAt(index);
         index++;
-        setTimeout(typeText, 40);
+        setTimeout(typeText, 35);
     }
 }
-typeText();
 
 function updateClock() {
     const now = new Date();
-    document.getElementById("clock").textContent = now.toLocaleTimeString();
+    document.getElementById("clock").textContent =
+        now.toLocaleDateString() + " | " + now.toLocaleTimeString();
 }
-setInterval(updateClock, 1000);
-updateClock();
 
-function animateCounter(id, target, speed) {
-    let count = 0;
-    const element = document.getElementById(id);
-    const increment = Math.ceil(target / speed);
+function updateLastDeployment() {
+    const now = new Date();
+    document.getElementById("lastUpdated").textContent =
+        now.toLocaleDateString();
+}
 
-    const counter = setInterval(() => {
-        count += increment;
-        if (count >= target) {
-            count = target;
-            clearInterval(counter);
+function launchProject() {
+    const message = document.getElementById("message");
+    message.innerHTML =
+        "🚀 Deployment Successful! Website is Live on AWS EC2 and Automatically Managed by Jenkins.";
+}
+
+const logs = [
+    "> git push origin main",
+    "> Jenkins webhook triggered",
+    "> Cloning repository...",
+    "> Pulling latest source code...",
+    "> Copying files to /var/www/html",
+    "> Restarting Nginx service...",
+    "> Deployment completed successfully.",
+    "> Live website updated on AWS EC2"
+];
+
+function typeLogs() {
+    const terminal = document.getElementById("terminalLog");
+    let line = 0;
+
+    function addLine() {
+        if (line < logs.length) {
+            terminal.textContent += logs[line] + "\n";
+            line++;
+            setTimeout(addLine, 600);
         }
-        element.textContent = count;
-    }, 30);
+    }
+
+    addLine();
 }
 
 window.onload = () => {
-    animateCounter("deployCount", 120, 50);
-    animateCounter("buildCount", 98, 50);
-    animateCounter("uptimeCount", 99, 60);
+    typeText();
+    updateClock();
+    updateLastDeployment();
+    typeLogs();
+    setInterval(updateClock, 1000);
 };
-
-function launchProject() {
-    const msg = document.getElementById("message");
-    msg.innerHTML = "🚀 Deployment Successful! Website is Live on AWS Cloud.";
-    msg.style.animation = "fadeInUp 0.8s ease";
-}

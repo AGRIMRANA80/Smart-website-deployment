@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Website Deployment</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automated Cloud-Based Website Deployment</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <div class="bg-animation"></div>
+    <div class="background"></div>
 
     <div class="container">
         <div class="card">
             <div class="top-bar">
                 <span class="badge">🚀 DevOps</span>
-                <span class="badge">⚙ Jenkins</span>
-                <span class="badge">☁ AWS</span>
+                <span class="badge">⚙️ Jenkins</span>
+                <span class="badge">☁️ AWS EC2</span>
+                <span class="badge">🌐 Nginx</span>
+                <span class="badge">🔁 CI/CD</span>
             </div>
 
-            <h1> Backend Website Deployment</h1>
+            <h1>Automated Cloud-Based Website Deployment</h1>
             <p class="typing-text"></p>
 
             <div class="live-info">
@@ -26,37 +27,68 @@
                 <span class="status">● Live Deployment Active</span>
             </div>
 
-            <button onclick="launchProject()">Launch Project</button>
+            <button onclick="launchProject()">Show Deployment Status</button>
             <h2 id="message"></h2>
 
             <div class="stats">
-                <div class="stat-box">
-                    <h3 id="deployCount">0</h3>
-                    <p>Deployments</p>
+                <div class="stat-box glow-blue">
+                    <h3>AWS EC2</h3>
+                    <p>Cloud Hosting Platform</p>
                 </div>
-                <div class="stat-box">
-                    <h3 id="buildCount">0</h3>
-                    <p>Successful Builds</p>
+                <div class="stat-box glow-purple">
+                    <h3>Jenkins</h3>
+                    <p>Automation Engine</p>
                 </div>
-                <div class="stat-box">
-                    <h3 id="uptimeCount">0</h3>
-                    <p>Cloud Uptime %</p>
+                <div class="stat-box glow-cyan">
+                    <h3>GitHub</h3>
+                    <p>Source Repository</p>
+                </div>
+                <div class="stat-box glow-green">
+                    <h3>Nginx</h3>
+                    <p>Web Server</p>
+                </div>
+                <div class="stat-box glow-orange">
+                    <h3>Production</h3>
+                    <p>Deployment Environment</p>
+                </div>
+                <div class="stat-box glow-pink">
+                    <h3 id="lastUpdated">--</h3>
+                    <p>Last Deployment</p>
                 </div>
             </div>
 
             <div class="features">
                 <div class="feature-box">
                     <h3>⚡ CI/CD Pipeline</h3>
-                    <p>Automated build and deployment using Jenkins pipeline.</p>
+                    <p>Automatically pulls latest code from GitHub and deploys to AWS using Jenkins.</p>
                 </div>
                 <div class="feature-box">
-                    <h3>🔄 Auto Integration</h3>
-                    <p>Continuous code integration with GitHub automation.</p>
+                    <h3>🔄 Continuous Integration</h3>
+                    <p>Every code push is integrated and prepared for deployment.</p>
                 </div>
                 <div class="feature-box">
-                    <h3>☁ Cloud Hosted</h3>
-                    <p>Live deployment on AWS EC2 with scalability.</p>
+                    <h3>☁️ Cloud Deployment</h3>
+                    <p>Website is hosted on AWS EC2 and served via Nginx.</p>
                 </div>
+            </div>
+
+            <div class="workflow">
+                <h3>Project Workflow</h3>
+                <p>👨‍💻 Developer → 📦 GitHub → ⚙️ Jenkins → ☁️ AWS EC2 → 🌐 Nginx → 🚀 Live Website</p>
+            </div>
+
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">deployment.log</span>
+                </div>
+                <div class="terminal-body" id="terminalLog"></div>
+            </div>
+
+            <div class="footer">
+                Developed by Agrim Rana | DevOps & Cloud Engineering Project
             </div>
         </div>
     </div>
